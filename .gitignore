@@ -1,0 +1,25 @@
+# Never commit live data, full corpus, dumps or private project archives
+*.sql
+*.sql.gz
+*.sqlite
+*.db
+*.bak
+*.zip
+.env
+.env.*
+*.pem
+*.key
+config/database.php
+config/config.php
+project_toulour_research*
+kamus_tolour_research*
+*VALIDATOR*
+*PENILAI*
+*ADJUDIKASI*
+*ASSESSMENT_PRIVATE*
+*SECRET*
+*PASSWORD*
+__pycache__/
+*.pyc
+Thumbs.db
+.DS_Store
