@@ -1,0 +1,333 @@
+{
+    "stage": "22E",
+    "protocol": "STAGE22E_FORENSIC_SQL_READONLY_2026_V1",
+    "run_id": "20261104_214857_9acd166d",
+    "timestamp_wita": "2026-11-04T21:48:57+08:00",
+    "mode": "--sql",
+    "status": "PASS",
+    "safety": "No database mutations. Stage22C/D historical reports untouched. SQL connection only to source V2 and reference Stage21 S1.",
+    "source_modified": false,
+    "frozen_files": {
+        "tests/index_comparator_abc.php": "3defe1d359cbd4ba8daea95c329e71748c8beb4609bab3c0fa75662d4521dd19",
+        "services/SearchService.php": "bd92f47062730315e21939ca2f0eb3c94dd8e28b30a9db93e816d0f75f30e95f",
+        "services/IndexStage2Materializer.php": "4bfbeb5bb14b97330000bee12cacc9517cf585f7c1c816bde8bb50392c489caa",
+        "services/IndexStage3IncrementalMaintainer.php": "b2c00ba1e8f34d4ad0b14311702d05b83ff6c92678254a36beef49447269a02f",
+        "models/Dictionary.php": "016fc74ce2f560757302a757b5041d4ee3c773f3fe7c59fa3d95d070aba64c98"
+    },
+    "sql_readonly": {
+        "status": "PASS",
+        "guard": "Read-only SQL only; no CREATE/DROP/UPDATE/DELETE/INSERT/COMMIT/ROLLBACK/LOCK/SELECT FOR UPDATE.",
+        "source_baseline_before": {
+            "source": {
+                "counts": {
+                    "dictionary": 5687,
+                    "approved": 4587,
+                    "entries": 4587,
+                    "terms": 29546
+                },
+                "core_hash": {
+                    "total": 5687,
+                    "approved": 4587,
+                    "sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4"
+                }
+            },
+            "reference": {
+                "counts": {
+                    "dictionary": 5687,
+                    "approved": 4587,
+                    "entries": 4587,
+                    "terms": 29546
+                },
+                "core_hash": {
+                    "total": 5687,
+                    "approved": 4587,
+                    "sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4"
+                }
+            }
+        },
+        "source_baseline_after": {
+            "source": {
+                "counts": {
+                    "dictionary": 5687,
+                    "approved": 4587,
+                    "entries": 4587,
+                    "terms": 29546
+                },
+                "core_hash": {
+                    "total": 5687,
+                    "approved": 4587,
+                    "sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4"
+                }
+            },
+            "reference": {
+                "counts": {
+                    "dictionary": 5687,
+                    "approved": 4587,
+                    "entries": 4587,
+                    "terms": 29546
+                },
+                "core_hash": {
+                    "total": 5687,
+                    "approved": 4587,
+                    "sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4"
+                }
+            }
+        },
+        "reference_digest_before_after": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0",
+        "server": {
+            "version": "10.4.32-MariaDB",
+            "schema": "kamus_tolour_index_stage21_s1_sandbox",
+            "global_status": {
+                "Innodb_buffer_pool_read_requests": "93295239",
+                "Innodb_buffer_pool_reads": "238887",
+                "Innodb_row_lock_time": "0",
+                "Innodb_row_lock_waits": "0",
+                "Threads_connected": "2",
+                "Threads_running": "6"
+            },
+            "variables": {
+                "autocommit": "ON",
+                "innodb_buffer_pool_size": "16777216",
+                "innodb_flush_log_at_trx_commit": "1",
+                "innodb_lock_wait_timeout": "28800",
+                "sync_binlog": "0",
+                "tx_isolation": "REPEATABLE-READ"
+            }
+        },
+        "tables": {
+            "dictionary": {
+                "ENGINE": "InnoDB",
+                "TABLE_ROWS": 5656,
+                "DATA_LENGTH": 1589248,
+                "INDEX_LENGTH": 245760
+            },
+            "idx_stage2_entries": {
+                "ENGINE": "InnoDB",
+                "TABLE_ROWS": 4582,
+                "DATA_LENGTH": 1589248,
+                "INDEX_LENGTH": 98304
+            },
+            "idx_stage2_terms": {
+                "ENGINE": "InnoDB",
+                "TABLE_ROWS": 26874,
+                "DATA_LENGTH": 4685824,
+                "INDEX_LENGTH": 4734976
+            },
+            "idx_stage2_meta": {
+                "ENGINE": "InnoDB",
+                "TABLE_ROWS": 0,
+                "DATA_LENGTH": 16384,
+                "INDEX_LENGTH": 0
+            }
+        },
+        "indexes": {
+            "dictionary": [
+                {
+                    "INDEX_NAME": "category_id",
+                    "SEQ_IN_INDEX": 1,
+                    "COLUMN_NAME": "category_id",
+                    "NON_UNIQUE": 1,
+                    "INDEX_TYPE": "BTREE"
+                },
+                {
+                    "INDEX_NAME": "fk_dict_contributor",
+                    "SEQ_IN_INDEX": 1,
+                    "COLUMN_NAME": "contributor_id",
+                    "NON_UNIQUE": 1,
+                    "INDEX_TYPE": "BTREE"
+                },
+                {
+                    "INDEX_NAME": "PRIMARY",
+                    "SEQ_IN_INDEX": 1,
+                    "COLUMN_NAME": "id",
+                    "NON_UNIQUE": 0,
+                    "INDEX_TYPE": "BTREE"
+                }
+            ],
+            "idx_stage2_entries": [
+                {
+                    "INDEX_NAME": "idx_stage2_cat",
+                    "SEQ_IN_INDEX": 1,
+                    "COLUMN_NAME": "category_id",
+                    "NON_UNIQUE": 1,
+                    "INDEX_TYPE": "BTREE"
+                },
+                {
+                    "INDEX_NAME": "PRIMARY",
+                    "SEQ_IN_INDEX": 1,
+                    "COLUMN_NAME": "dictionary_id",
+                    "NON_UNIQUE": 0,
+                    "INDEX_TYPE": "BTREE"
+                }
+            ],
+            "idx_stage2_terms": [
+                {
+                    "INDEX_NAME": "idx_stage2_lookup",
+                    "SEQ_IN_INDEX": 1,
+                    "COLUMN_NAME": "kind",
+                    "NON_UNIQUE": 1,
+                    "INDEX_TYPE": "BTREE"
+                },
+                {
+                    "INDEX_NAME": "idx_stage2_lookup",
+                    "SEQ_IN_INDEX": 2,
+                    "COLUMN_NAME": "term_sha256",
+                    "NON_UNIQUE": 1,
+                    "INDEX_TYPE": "BTREE"
+                },
+                {
+                    "INDEX_NAME": "PRIMARY",
+                    "SEQ_IN_INDEX": 1,
+                    "COLUMN_NAME": "dictionary_id",
+                    "NON_UNIQUE": 0,
+                    "INDEX_TYPE": "BTREE"
+                },
+                {
+                    "INDEX_NAME": "PRIMARY",
+                    "SEQ_IN_INDEX": 2,
+                    "COLUMN_NAME": "kind",
+                    "NON_UNIQUE": 0,
+                    "INDEX_TYPE": "BTREE"
+                },
+                {
+                    "INDEX_NAME": "PRIMARY",
+                    "SEQ_IN_INDEX": 3,
+                    "COLUMN_NAME": "term_sha256",
+                    "NON_UNIQUE": 0,
+                    "INDEX_TYPE": "BTREE"
+                }
+            ],
+            "idx_stage2_meta": [
+                {
+                    "INDEX_NAME": "PRIMARY",
+                    "SEQ_IN_INDEX": 1,
+                    "COLUMN_NAME": "id",
+                    "NON_UNIQUE": 0,
+                    "INDEX_TYPE": "BTREE"
+                }
+            ]
+        },
+        "sample_dictionary_id": 1,
+        "explain_select_plans": {
+            "metadata_point_lookup": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "idx_stage2_meta",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "1",
+                    "ref": "const",
+                    "rows": "1",
+                    "Extra": ""
+                }
+            ],
+            "entry_point_lookup": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "idx_stage2_entries",
+                    "type": "const",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "ref": "const",
+                    "rows": "1",
+                    "Extra": ""
+                }
+            ],
+            "posting_prefetch": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": "idx_stage2_terms",
+                    "type": "ref",
+                    "possible_keys": "PRIMARY",
+                    "key": "PRIMARY",
+                    "key_len": "4",
+                    "ref": "const",
+                    "rows": "8",
+                    "Extra": "Using where"
+                }
+            ],
+            "posting_exact_key": [
+                {
+                    "id": 1,
+                    "select_type": "SIMPLE",
+                    "table": null,
+                    "type": null,
+                    "possible_keys": null,
+                    "key": null,
+                    "key_len": null,
+                    "ref": null,
+                    "rows": null,
+                    "Extra": "Impossible WHERE noticed after reading const tables"
+                }
+            ]
+        },
+        "select_latency_ms": {
+            "metadata_point_lookup": {
+                "stats": {
+                    "n": 15,
+                    "mean_ms": 0.3919,
+                    "median_ms": 0.3712,
+                    "p95_nearest_rank_ms": 0.6327,
+                    "min_ms": 0.2516,
+                    "max_ms": 0.6327,
+                    "sd_sample_ms": 0.1081,
+                    "trimmed_mean_10pct_ms": 0.3842
+                },
+                "repetitions": 15,
+                "rows_last_execution": 1
+            },
+            "entry_point_lookup": {
+                "stats": {
+                    "n": 15,
+                    "mean_ms": 0.2518,
+                    "median_ms": 0.2552,
+                    "p95_nearest_rank_ms": 0.3171,
+                    "min_ms": 0.2007,
+                    "max_ms": 0.3171,
+                    "sd_sample_ms": 0.0327,
+                    "trimmed_mean_10pct_ms": 0.2507
+                },
+                "repetitions": 15,
+                "rows_last_execution": 1
+            },
+            "posting_prefetch": {
+                "stats": {
+                    "n": 15,
+                    "mean_ms": 0.2427,
+                    "median_ms": 0.237,
+                    "p95_nearest_rank_ms": 0.2761,
+                    "min_ms": 0.2298,
+                    "max_ms": 0.2761,
+                    "sd_sample_ms": 0.0142,
+                    "trimmed_mean_10pct_ms": 0.2411
+                },
+                "repetitions": 15,
+                "rows_last_execution": 8
+            },
+            "posting_exact_key": {
+                "stats": {
+                    "n": 15,
+                    "mean_ms": 0.2059,
+                    "median_ms": 0.2031,
+                    "p95_nearest_rank_ms": 0.2309,
+                    "min_ms": 0.2002,
+                    "max_ms": 0.2309,
+                    "sd_sample_ms": 0.0077,
+                    "trimmed_mean_10pct_ms": 0.2044
+                },
+                "repetitions": 15,
+                "rows_last_execution": 0
+            }
+        },
+        "limitations": [
+            "EXPLAIN/SELECT queries are read-only proxies for Stage22D lookup path; do not measure FOR UPDATE lock waits, DML writes, or transaction cost.",
+            "15 repetitions of tiny SELECTs cannot explain all 22D high-tail outliers.",
+            "No code or schema changes made; no service variables changed."
+        ]
+    }
+}

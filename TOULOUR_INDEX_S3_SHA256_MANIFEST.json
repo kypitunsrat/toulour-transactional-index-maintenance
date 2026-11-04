@@ -1,0 +1,97 @@
+{
+  "artifact": "Toulour Index Maintenance - Supplementary Evidence S3 (journal-independent)",
+  "type": "result-level audit (not an experimental replay package)",
+  "generated_date": "2026-11-04",
+  "inputs": [
+    {
+      "category": "22C_B1",
+      "file": "STAGE22C_B1_30PAIRS_20261103_210914_6cdcad84.json",
+      "sha256": "119b50fe4007968f3d15d4247af2f33eb04e53000e0b5679c1318332795b7ec7",
+      "size_bytes": 143885
+    },
+    {
+      "category": "22C_B10",
+      "file": "STAGE22C_B10_30PAIRS_20261103_222145_deeb9a84.json",
+      "sha256": "89002f44cdf4e5bde25870a14eba71b6a05b08721055849d1bc438a715e67ae4",
+      "size_bytes": 150479
+    },
+    {
+      "category": "22C_B100",
+      "file": "STAGE22C_B100_30PAIRS_20261103_232416_7f33df38.json",
+      "sha256": "464650e252facc025a58b50b2f6cb6bf998e4e266a867e4a6be6f0ea0bcf5c85",
+      "size_bytes": 151194
+    },
+    {
+      "category": "22D_B1",
+      "file": "STAGE22D_B1_30PAIRS_20261104_014208_bc5c78f5.json",
+      "sha256": "63b2bfe184deed817d11abf65e425d3234d7b347556391224b60bfa722b53cc4",
+      "size_bytes": 197971
+    },
+    {
+      "category": "22D_B10",
+      "file": "STAGE22D_B10_30PAIRS_20261104_160504_73d3fa83.json",
+      "sha256": "7cea58a9e0e009b72e2a6fdf0e63ca8231567e66985706264d14ecf3e1e96131",
+      "size_bytes": 205077
+    },
+    {
+      "category": "22D_B100",
+      "file": "STAGE22D_B100_30PAIRS_20261104_183404_235b348b.json",
+      "sha256": "3a55b43f74ebfd29f394b69a7165d07fb86f4705838dea908da8bd841ea4a362",
+      "size_bytes": 206229
+    },
+    {
+      "category": "22E_OFFLINE",
+      "file": "STAGE22E_OFFLINE_20261104_214831_05496b01.json",
+      "sha256": "27753a7f347a71a66a32dc0218bdc28c5a8cabc35a0402e7835bd95f98ebb1df",
+      "size_bytes": 22437
+    },
+    {
+      "category": "22E_SQL",
+      "file": "STAGE22E_SQL_READONLY_20261104_214857_9acd166d.json",
+      "sha256": "d107dd2f175047d80c3d959c8bbfe0cdce48bd376071c0bb87992b23b95e30a2",
+      "size_bytes": 12179
+    },
+    {
+      "category": "22E_PHASES",
+      "file": "STAGE22E_PAIRED_PHASES_20261104_214831_05496b01.csv",
+      "sha256": "87ac1c2e037c943e45bd6e1712646bd251af807a0e4f8412f68f00efd940334f",
+      "size_bytes": 20251
+    },
+    {
+      "category": "22E_INTERPRETASI",
+      "file": "STAGE22E_INTERPRETASI_20261104_214831_05496b01.md",
+      "sha256": "db1b650ddbb38317c4ad768287272a241413a842bb5321ab3ccbaf201ecb9038",
+      "size_bytes": 1994
+    },
+    {
+      "category": "22B_PUBLISH_ROLLBACK",
+      "file": "STAGE22B2_PUBLISH_ROLLBACK_20261103_203938_918812.json",
+      "sha256": "7e718775d2b85c16be7202c29cb0253ba0871328e30981d5002937c55e5f91ef",
+      "size_bytes": 4325
+    },
+    {
+      "category": "22B_PILOT",
+      "file": "STAGE22B_RAW_B1_4PAIRS_20261103_131132_be8dfd.json",
+      "sha256": "0fcf5e07e933145dbdb5faf334ebf1e0d61b28cee5dde2999493b746eb66f059",
+      "size_bytes": 23946
+    }
+  ],
+  "generated": [
+    {
+      "file": "TOULOUR_INDEX_S3_PAIRED_180.csv",
+      "sha256": "fa2e8d8f7b8be74fd39327003bb92b04561293aa90d8a6e0895e379e9c7ca595"
+    },
+    {
+      "file": "TOULOUR_INDEX_S3_VERIFY_SAVED_RESULTS.py",
+      "sha256": "2aace4f1f53bbb95f486c7e3fd30df38ff104386aae94ecde9b43570ef1233e1"
+    },
+    {
+      "file": "TOULOUR_INDEX_S3_README.md",
+      "sha256": "2cad1593d7991a00f4c9625450f734f2af6eee7aa78e92267d81e01cda97b68c"
+    }
+  ],
+  "interpretation": "The two 90-pair protocols are different implementations; whole-index digest parity is not independent correctness against a separately implemented canonical source oracle.",
+  "corpus_included": false,
+  "participants_included": false,
+  "source_licensing_review_required": true
+}

@@ -1,0 +1,524 @@
+{
+    "purpose": "final_fairness_comparator_A_full_rebuild_B_selective_refresh_C_differential",
+    "mode": "--abc-benchmark",
+    "scale": 1,
+    "batch": 1,
+    "reps": 4,
+    "arms": "targeted",
+    "timestamp_wita": "2026-11-03T20:04:24+08:00",
+    "main_database": "kamus_tolour_index_v2",
+    "prepared_reference_database": "kamus_tolour_index_stage21_s1_sandbox",
+    "disposable_work_database": "kamus_tolour_index_abc_s1_work_sandbox",
+    "source_modified": false,
+    "source_1x_original": true,
+    "status": "PASS",
+    "warnings": [
+        "This is an engineering A/B/C comparison; not an independently optimized state-of-the-art baseline.",
+        "Full rebuild and selective row refresh are specific SQL implementations and must be labeled as such.",
+        "Do not pool this data with rollback-only Stage21 experiments as identical protocols.",
+        "No production retrieval speedup is implied."
+    ],
+    "events": [
+        {
+            "rep": 1,
+            "arm": "selective_refresh",
+            "work_db_disposed": true,
+            "restore_ms_excluded": 33076.775
+        },
+        {
+            "rep": 1,
+            "arm": "differential",
+            "work_db_disposed": true,
+            "restore_ms_excluded": 38744.426
+        },
+        {
+            "rep": 2,
+            "arm": "differential",
+            "work_db_disposed": true,
+            "restore_ms_excluded": 39435.863
+        },
+        {
+            "rep": 2,
+            "arm": "selective_refresh",
+            "work_db_disposed": true,
+            "restore_ms_excluded": 42494.148
+        },
+        {
+            "rep": 3,
+            "arm": "selective_refresh",
+            "work_db_disposed": true,
+            "restore_ms_excluded": 52870.878
+        },
+        {
+            "rep": 3,
+            "arm": "differential",
+            "work_db_disposed": true,
+            "restore_ms_excluded": 40779.644
+        },
+        {
+            "rep": 4,
+            "arm": "differential",
+            "work_db_disposed": true,
+            "restore_ms_excluded": 42682.592
+        },
+        {
+            "rep": 4,
+            "arm": "selective_refresh",
+            "work_db_disposed": true,
+            "restore_ms_excluded": 51140.694
+        }
+    ],
+    "frozen_files": {
+        "services/SearchService.php": "bd92f47062730315e21939ca2f0eb3c94dd8e28b30a9db93e816d0f75f30e95f",
+        "services/IndexStage2Materializer.php": "4bfbeb5bb14b97330000bee12cacc9517cf585f7c1c816bde8bb50392c489caa",
+        "services/IndexStage3IncrementalMaintainer.php": "b2c00ba1e8f34d4ad0b14311702d05b83ff6c92678254a36beef49447269a02f",
+        "models/Dictionary.php": "016fc74ce2f560757302a757b5041d4ee3c773f3fe7c59fa3d95d070aba64c98"
+    },
+    "initial": {
+        "source": {
+            "total": 5687,
+            "approved": 4587,
+            "sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4"
+        },
+        "main": {
+            "dictionary": 5687,
+            "approved": 4587,
+            "entries": 4587,
+            "terms": 29546
+        },
+        "sandbox": {
+            "dictionary": 5687,
+            "approved": 4587,
+            "entries": 4587,
+            "terms": 29546
+        },
+        "scale": 1,
+        "synthetic_approved_replicas": 0,
+        "prepared": true,
+        "replica_semantics": "exact copies of real lexical entries, ID-offset only; artificial collisions and duplicate term distribution"
+    },
+    "initial_index_digest_sha256": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0",
+    "fixture_counts": {
+        "eligible": 4587,
+        "batch": 1,
+        "max_reps": 4
+    },
+    "snapshot": {
+        "sha256": "5922416ab71c2678733cfabecf922868cfaebb7e7f2813a2f032496eb1ab29e0",
+        "bytes": 11490482,
+        "creation_ms_excluded": 3277.045
+    },
+    "benchmark": {
+        "runs": [
+            {
+                "rep": 1,
+                "order": [
+                    "selective_refresh",
+                    "differential"
+                ],
+                "order_scheme": "TARGETED_BLOCK4_COUNTERBALANCED_V2",
+                "batch_size": 1,
+                "mutation_mix": {
+                    "word": 1
+                },
+                "mutation_id_sha256": "da2c575e48ee7651b9e99a511216b827ef6dea7ca08e77c7055b18b9d918a842",
+                "first_mutation_ids": [
+                    1248
+                ],
+                "parity": "PASS",
+                "methods": {
+                    "selective_refresh": {
+                        "arm": "selective_refresh",
+                        "mutation_ms": 109.2794,
+                        "maintenance_ms": 70.9835,
+                        "mutation_plus_maintenance_ms": 180.2629,
+                        "index_digest_sha256": "abc8f8e91a8bd497d93930d180bec0c98e6e0c4d736c8bf0ab5839c592840af7",
+                        "verification_excluded": true,
+                        "verification_ms_excluded": 134.0365,
+                        "index_operations": {
+                            "changed_rows": 1,
+                            "postings_deleted": 7,
+                            "postings_inserted": 7,
+                            "entries_deleted": 0,
+                            "entries_written": 1,
+                            "delta_entries": 0,
+                            "delta_terms": 0,
+                            "baseline_policy": "refresh all postings per changed entry, even unchanged postings; single aggregate metadata update"
+                        },
+                        "counts_after_mutation": {
+                            "dictionary": 5687,
+                            "approved": 4587,
+                            "entries": 4587,
+                            "terms": 29546
+                        },
+                        "commit_ms": 219.3769,
+                        "mutation_maintenance_commit_ms": 399.6398,
+                        "wall_mutation_to_commit_including_verification_ms": 533.6819,
+                        "timing_definition": "mutation_maintenance_commit_ms sums timed mutation, maintenance, commit segments; verification/snapshot/drop excluded",
+                        "transaction": "COMMITTED_ON_DISPOSABLE_WORK_DB_ONLY",
+                        "restore_ms_excluded": 33076.775,
+                        "drop_work_db_ms_excluded": 8356.456
+                    },
+                    "differential": {
+                        "arm": "differential",
+                        "mutation_ms": 25.4241,
+                        "maintenance_ms": 58.8426,
+                        "mutation_plus_maintenance_ms": 84.2667,
+                        "index_digest_sha256": "abc8f8e91a8bd497d93930d180bec0c98e6e0c4d736c8bf0ab5839c592840af7",
+                        "verification_excluded": true,
+                        "verification_ms_excluded": 114.198,
+                        "index_operations": {
+                            "changed_rows": 1,
+                            "write_counts": {
+                                "entry_writes": 1,
+                                "postings_deleted": 1,
+                                "postings_inserted": 1,
+                                "noop": 0
+                            }
+                        },
+                        "counts_after_mutation": {
+                            "dictionary": 5687,
+                            "approved": 4587,
+                            "entries": 4587,
+                            "terms": 29546
+                        },
+                        "commit_ms": 53.3598,
+                        "mutation_maintenance_commit_ms": 137.6265,
+                        "wall_mutation_to_commit_including_verification_ms": 251.829,
+                        "timing_definition": "mutation_maintenance_commit_ms sums timed mutation, maintenance, commit segments; verification/snapshot/drop excluded",
+                        "transaction": "COMMITTED_ON_DISPOSABLE_WORK_DB_ONLY",
+                        "restore_ms_excluded": 38744.426,
+                        "drop_work_db_ms_excluded": 7787.271
+                    }
+                }
+            },
+            {
+                "rep": 2,
+                "order": [
+                    "differential",
+                    "selective_refresh"
+                ],
+                "order_scheme": "TARGETED_BLOCK4_COUNTERBALANCED_V2",
+                "batch_size": 1,
+                "mutation_mix": {
+                    "meaning": 1
+                },
+                "mutation_id_sha256": "9c27727c109abd005defbcac1ab6f1a69a3f858144024969816b65c00f89ed18",
+                "first_mutation_ids": [
+                    4174
+                ],
+                "parity": "PASS",
+                "methods": {
+                    "differential": {
+                        "arm": "differential",
+                        "mutation_ms": 13.7077,
+                        "maintenance_ms": 59.337,
+                        "mutation_plus_maintenance_ms": 73.0447,
+                        "index_digest_sha256": "b7308f6f4195951ce3146445f8c50bf0e542120bdf9c6d1397d2cad821a492e6",
+                        "verification_excluded": true,
+                        "verification_ms_excluded": 110.806,
+                        "index_operations": {
+                            "changed_rows": 1,
+                            "write_counts": {
+                                "entry_writes": 1,
+                                "postings_deleted": 1,
+                                "postings_inserted": 2,
+                                "noop": 0
+                            }
+                        },
+                        "counts_after_mutation": {
+                            "dictionary": 5687,
+                            "approved": 4587,
+                            "entries": 4587,
+                            "terms": 29547
+                        },
+                        "commit_ms": 36.7904,
+                        "mutation_maintenance_commit_ms": 109.8351,
+                        "wall_mutation_to_commit_including_verification_ms": 220.6453,
+                        "timing_definition": "mutation_maintenance_commit_ms sums timed mutation, maintenance, commit segments; verification/snapshot/drop excluded",
+                        "transaction": "COMMITTED_ON_DISPOSABLE_WORK_DB_ONLY",
+                        "restore_ms_excluded": 39435.863,
+                        "drop_work_db_ms_excluded": 7183.553
+                    },
+                    "selective_refresh": {
+                        "arm": "selective_refresh",
+                        "mutation_ms": 10.9748,
+                        "maintenance_ms": 51.9073,
+                        "mutation_plus_maintenance_ms": 62.8821,
+                        "index_digest_sha256": "b7308f6f4195951ce3146445f8c50bf0e542120bdf9c6d1397d2cad821a492e6",
+                        "verification_excluded": true,
+                        "verification_ms_excluded": 114.7416,
+                        "index_operations": {
+                            "changed_rows": 1,
+                            "postings_deleted": 8,
+                            "postings_inserted": 9,
+                            "entries_deleted": 0,
+                            "entries_written": 1,
+                            "delta_entries": 0,
+                            "delta_terms": 1,
+                            "baseline_policy": "refresh all postings per changed entry, even unchanged postings; single aggregate metadata update"
+                        },
+                        "counts_after_mutation": {
+                            "dictionary": 5687,
+                            "approved": 4587,
+                            "entries": 4587,
+                            "terms": 29547
+                        },
+                        "commit_ms": 46.5012,
+                        "mutation_maintenance_commit_ms": 109.3833,
+                        "wall_mutation_to_commit_including_verification_ms": 224.1298,
+                        "timing_definition": "mutation_maintenance_commit_ms sums timed mutation, maintenance, commit segments; verification/snapshot/drop excluded",
+                        "transaction": "COMMITTED_ON_DISPOSABLE_WORK_DB_ONLY",
+                        "restore_ms_excluded": 42494.148,
+                        "drop_work_db_ms_excluded": 7764.493
+                    }
+                }
+            },
+            {
+                "rep": 3,
+                "order": [
+                    "selective_refresh",
+                    "differential"
+                ],
+                "order_scheme": "TARGETED_BLOCK4_COUNTERBALANCED_V2",
+                "batch_size": 1,
+                "mutation_mix": {
+                    "category": 1
+                },
+                "mutation_id_sha256": "9060ce5653093cd9bff480cb01ff0e3a790e6f545e214a3dd85841daabac7848",
+                "first_mutation_ids": [
+                    2505
+                ],
+                "parity": "PASS",
+                "methods": {
+                    "selective_refresh": {
+                        "arm": "selective_refresh",
+                        "mutation_ms": 49.0236,
+                        "maintenance_ms": 256.6735,
+                        "mutation_plus_maintenance_ms": 305.6971,
+                        "index_digest_sha256": "19bcbe5821736b5d51047da53555679fca531b121820aead8293ddbd16cd3cd8",
+                        "verification_excluded": true,
+                        "verification_ms_excluded": 143.2595,
+                        "index_operations": {
+                            "changed_rows": 1,
+                            "postings_deleted": 9,
+                            "postings_inserted": 9,
+                            "entries_deleted": 0,
+                            "entries_written": 1,
+                            "delta_entries": 0,
+                            "delta_terms": 0,
+                            "baseline_policy": "refresh all postings per changed entry, even unchanged postings; single aggregate metadata update"
+                        },
+                        "counts_after_mutation": {
+                            "dictionary": 5687,
+                            "approved": 4587,
+                            "entries": 4587,
+                            "terms": 29546
+                        },
+                        "commit_ms": 56.5379,
+                        "mutation_maintenance_commit_ms": 362.235,
+                        "wall_mutation_to_commit_including_verification_ms": 505.5,
+                        "timing_definition": "mutation_maintenance_commit_ms sums timed mutation, maintenance, commit segments; verification/snapshot/drop excluded",
+                        "transaction": "COMMITTED_ON_DISPOSABLE_WORK_DB_ONLY",
+                        "restore_ms_excluded": 52870.878,
+                        "drop_work_db_ms_excluded": 11326.525
+                    },
+                    "differential": {
+                        "arm": "differential",
+                        "mutation_ms": 38.2862,
+                        "maintenance_ms": 2.082,
+                        "mutation_plus_maintenance_ms": 40.3682,
+                        "index_digest_sha256": "19bcbe5821736b5d51047da53555679fca531b121820aead8293ddbd16cd3cd8",
+                        "verification_excluded": true,
+                        "verification_ms_excluded": 121.8338,
+                        "index_operations": {
+                            "changed_rows": 1,
+                            "write_counts": {
+                                "entry_writes": 1,
+                                "postings_deleted": 0,
+                                "postings_inserted": 0,
+                                "noop": 0
+                            }
+                        },
+                        "counts_after_mutation": {
+                            "dictionary": 5687,
+                            "approved": 4587,
+                            "entries": 4587,
+                            "terms": 29546
+                        },
+                        "commit_ms": 52.2035,
+                        "mutation_maintenance_commit_ms": 92.5717,
+                        "wall_mutation_to_commit_including_verification_ms": 214.4101,
+                        "timing_definition": "mutation_maintenance_commit_ms sums timed mutation, maintenance, commit segments; verification/snapshot/drop excluded",
+                        "transaction": "COMMITTED_ON_DISPOSABLE_WORK_DB_ONLY",
+                        "restore_ms_excluded": 40779.644,
+                        "drop_work_db_ms_excluded": 8115.315
+                    }
+                }
+            },
+            {
+                "rep": 4,
+                "order": [
+                    "differential",
+                    "selective_refresh"
+                ],
+                "order_scheme": "TARGETED_BLOCK4_COUNTERBALANCED_V2",
+                "batch_size": 1,
+                "mutation_mix": {
+                    "unpublish": 1
+                },
+                "mutation_id_sha256": "39e18a493b913441c12fac89a09f24958e5da0ff6f3300c80c5359f36e3223aa",
+                "first_mutation_ids": [
+                    910
+                ],
+                "parity": "PASS",
+                "methods": {
+                    "differential": {
+                        "arm": "differential",
+                        "mutation_ms": 16.6556,
+                        "maintenance_ms": 13.9632,
+                        "mutation_plus_maintenance_ms": 30.6188,
+                        "index_digest_sha256": "389f8e2959229bb1c1ca686f3e29a613166db5fb589c14d543187dfe7f859fd7",
+                        "verification_excluded": true,
+                        "verification_ms_excluded": 102.7372,
+                        "index_operations": {
+                            "changed_rows": 1,
+                            "write_counts": {
+                                "entry_writes": 1,
+                                "postings_deleted": 7,
+                                "postings_inserted": 0,
+                                "noop": 0
+                            }
+                        },
+                        "counts_after_mutation": {
+                            "dictionary": 5687,
+                            "approved": 4586,
+                            "entries": 4586,
+                            "terms": 29539
+                        },
+                        "commit_ms": 125.2539,
+                        "mutation_maintenance_commit_ms": 155.8727,
+                        "wall_mutation_to_commit_including_verification_ms": 258.614,
+                        "timing_definition": "mutation_maintenance_commit_ms sums timed mutation, maintenance, commit segments; verification/snapshot/drop excluded",
+                        "transaction": "COMMITTED_ON_DISPOSABLE_WORK_DB_ONLY",
+                        "restore_ms_excluded": 42682.592,
+                        "drop_work_db_ms_excluded": 6349.557
+                    },
+                    "selective_refresh": {
+                        "arm": "selective_refresh",
+                        "mutation_ms": 31.5191,
+                        "maintenance_ms": 42.3623,
+                        "mutation_plus_maintenance_ms": 73.8814,
+                        "index_digest_sha256": "389f8e2959229bb1c1ca686f3e29a613166db5fb589c14d543187dfe7f859fd7",
+                        "verification_excluded": true,
+                        "verification_ms_excluded": 133.5153,
+                        "index_operations": {
+                            "changed_rows": 1,
+                            "postings_deleted": 7,
+                            "postings_inserted": 0,
+                            "entries_deleted": 1,
+                            "entries_written": 0,
+                            "delta_entries": -1,
+                            "delta_terms": -7,
+                            "baseline_policy": "refresh all postings per changed entry, even unchanged postings; single aggregate metadata update"
+                        },
+                        "counts_after_mutation": {
+                            "dictionary": 5687,
+                            "approved": 4586,
+                            "entries": 4586,
+                            "terms": 29539
+                        },
+                        "commit_ms": 348.3909,
+                        "mutation_maintenance_commit_ms": 422.2723,
+                        "wall_mutation_to_commit_including_verification_ms": 555.8105,
+                        "timing_definition": "mutation_maintenance_commit_ms sums timed mutation, maintenance, commit segments; verification/snapshot/drop excluded",
+                        "transaction": "COMMITTED_ON_DISPOSABLE_WORK_DB_ONLY",
+                        "restore_ms_excluded": 51140.694,
+                        "drop_work_db_ms_excluded": 7908.082
+                    }
+                }
+            }
+        ],
+        "summary": {
+            "per_method": {
+                "selective_refresh": {
+                    "maintenance_ms": {
+                        "n": 4,
+                        "median": 61.4454,
+                        "mean": 105.48165,
+                        "p95": 256.6735,
+                        "sample_sd": 101.49444,
+                        "min": 42.3623,
+                        "max": 256.6735
+                    },
+                    "mutation_maintenance_commit_ms": {
+                        "n": 4,
+                        "median": 380.9374,
+                        "mean": 323.3826,
+                        "p95": 422.2723,
+                        "sample_sd": 144.79818,
+                        "min": 109.3833,
+                        "max": 422.2723
+                    }
+                },
+                "differential": {
+                    "maintenance_ms": {
+                        "n": 4,
+                        "median": 36.4029,
+                        "mean": 33.5562,
+                        "p95": 59.337,
+                        "sample_sd": 29.88067,
+                        "min": 2.082,
+                        "max": 59.337
+                    },
+                    "mutation_maintenance_commit_ms": {
+                        "n": 4,
+                        "median": 123.7308,
+                        "mean": 123.9765,
+                        "p95": 155.8727,
+                        "sample_sd": 28.22488,
+                        "min": 92.5717,
+                        "max": 155.8727
+                    }
+                }
+            },
+            "paired_ratios": {
+                "selective_refresh_over_differential": {
+                    "n": 4,
+                    "median": 2.12009,
+                    "mean": 32.09929,
+                    "p95": 123.28218,
+                    "sample_sd": 60.79601,
+                    "min": 0.87479,
+                    "max": 123.28218
+                }
+            }
+        },
+        "all_pair_digests_identical": true,
+        "all_work_databases_disposed": true,
+        "scope": "Real 1x sandbox, CLI sequential SQL maintenance, only newly created disposable work DB commits, snapshot and verification excluded; PHP timings not production latency."
+    },
+    "final": {
+        "source": {
+            "total": 5687,
+            "approved": 4587,
+            "sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4"
+        },
+        "main": {
+            "dictionary": 5687,
+            "approved": 4587,
+            "entries": 4587,
+            "terms": 29546
+        },
+        "sandbox": {
+            "dictionary": 5687,
+            "approved": 4587,
+            "entries": 4587,
+            "terms": 29546
+        },
+        "scale": 1,
+        "synthetic_approved_replicas": 0,
+        "prepared": true,
+        "replica_semantics": "exact copies of real lexical entries, ID-offset only; artificial collisions and duplicate term distribution"
+    }
+}

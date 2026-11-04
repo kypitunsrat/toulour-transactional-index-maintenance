@@ -1,0 +1,15 @@
+STAGE22C RUNNER SOURCE AUDIT
+===========================
+Frozen historical ABC runner SHA256: 3defe1d359cbd4ba8daea95c329e71748c8beb4609bab3c0fa75662d4521dd19
+Independent Stage22C runner SHA256: 54e6bb649646992ded51d4e14dd8b46ae5ad9785dbbd69d7a57563904c0cd7d9
+
+Main differences from historical comparator:
+- Separate file path tests/index_stage22c_robustness.php
+- Only targeted B/C; benchmark reps 2 (pilot) or 30 (full)
+- Frozen original runner SHA256 check before running
+- Stage22C reports and per-pair checkpoints under tests/stage22/reports
+- ETA and progress after each full paired repetition, outside measurement
+- Same original deterministic fixture planning and B/C arm logic, same DB guards
+- Original frozen PHP source files not included/overwritten.
+
+NOTE: Audit is static + php -l only. Actual MariaDB benchmark must be run on Windows XAMPP.

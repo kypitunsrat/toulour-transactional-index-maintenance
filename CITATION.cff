@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite the associated research manuscript and this evidence archive; check for the final published citation."
+type: software
+title: "Toulour–Indonesian Transactional Lexical Index Maintenance: Saved Benchmark Evidence and Code Snapshots"
+authors:
+  - family-names: Palilingan
+    given-names: Kenneth Yosua
+    affiliation: Sam Ratulangi University
+  - family-names: Joshua
+    given-names: Salaki Reynaldo
+    affiliation: Sam Ratulangi University
+  - family-names: Kwon
+    given-names: Kihyeon
+    affiliation: Kangwon National University
+abstract: "Audit evidence, verification scripts and historical runner snapshots for transaction-bound Toulour–Indonesian index maintenance. Not a standalone full experimental replay."

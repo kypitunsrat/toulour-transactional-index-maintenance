@@ -1,0 +1,106 @@
+{
+    "stage": "22B2",
+    "status": "PASS",
+    "timestamp_wita": "2026-11-03T20:36:45+08:00",
+    "scope": "publish-pending COMMIT B/C parity and explicit ROLLBACK B/C parity, original 1x database",
+    "source_db": "kamus_tolour_index_v2",
+    "reference_db": "kamus_tolour_index_stage21_s1_sandbox",
+    "only_ddl_target": "kamus_tolour_index_stage22b2_work_sandbox",
+    "checks": {
+        "publish_pending_commit": {
+            "status": "PASS",
+            "B_C_digest_identical": true,
+            "methods": {
+                "selective_refresh": {
+                    "status": "PASS",
+                    "digest_sha256": "2e765661574ca76ba8687ee55ea5fa56cfd4eb4dda4d56bd6134bf9662e2dcb0",
+                    "counts_after": {
+                        "dictionary": 5687,
+                        "approved": 4588,
+                        "entries": 4588,
+                        "terms": 29550
+                    },
+                    "operations": {
+                        "changed_rows": 1,
+                        "postings_deleted": 0,
+                        "postings_inserted": 4,
+                        "entries_deleted": 0,
+                        "entries_written": 1,
+                        "delta_entries": 1,
+                        "delta_terms": 4,
+                        "baseline_policy": "refresh all postings per changed entry, even unchanged postings; single aggregate metadata update"
+                    }
+                },
+                "differential": {
+                    "status": "PASS",
+                    "digest_sha256": "2e765661574ca76ba8687ee55ea5fa56cfd4eb4dda4d56bd6134bf9662e2dcb0",
+                    "counts_after": {
+                        "dictionary": 5687,
+                        "approved": 4588,
+                        "entries": 4588,
+                        "terms": 29550
+                    },
+                    "operations": {
+                        "dictionary_id": 4587,
+                        "operation": "insert",
+                        "entry_writes": 1,
+                        "postings_deleted": 0,
+                        "postings_inserted": 4,
+                        "noop": false,
+                        "entry_delta": 1,
+                        "posting_delta": 4
+                    }
+                }
+            }
+        },
+        "explicit_rollback": {
+            "selective_refresh": {
+                "status": "PASS",
+                "index_digest_restored": true,
+                "dictionary_core_restored": true,
+                "source_status_restored": true,
+                "operations_before_rollback": {
+                    "changed_rows": 1,
+                    "postings_deleted": 0,
+                    "postings_inserted": 4,
+                    "entries_deleted": 0,
+                    "entries_written": 1,
+                    "delta_entries": 1,
+                    "delta_terms": 4,
+                    "baseline_policy": "refresh all postings per changed entry, even unchanged postings; single aggregate metadata update"
+                }
+            },
+            "differential": {
+                "status": "PASS",
+                "index_digest_restored": true,
+                "dictionary_core_restored": true,
+                "source_status_restored": true,
+                "operations_before_rollback": {
+                    "dictionary_id": 4587,
+                    "operation": "insert",
+                    "entry_writes": 1,
+                    "postings_deleted": 0,
+                    "postings_inserted": 4,
+                    "noop": false,
+                    "entry_delta": 1,
+                    "posting_delta": 4
+                }
+            }
+        }
+    },
+    "warnings": [
+        "Not a performance benchmark",
+        "No concurrency/isolation proof"
+    ],
+    "baseline_index_sha256": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0",
+    "baseline_core_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+    "fixture": {
+        "pending_id": 4587,
+        "initial_status": "menunggu",
+        "new_status": "disetujui"
+    },
+    "snapshot_sha256": "e1346526945ac1b442bc6edc64fc824466a76b5b49a32ec92403cd82cf669d7f",
+    "source_reference_unchanged": true,
+    "work_db_disposed": true,
+    "elapsed_seconds": 173.34
+}

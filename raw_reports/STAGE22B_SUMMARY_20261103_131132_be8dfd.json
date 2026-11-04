@@ -1,0 +1,28 @@
+{
+    "stage": "22B",
+    "substage": "pilot_commit_parity",
+    "status": "PASS",
+    "timestamp_wita": "2026-11-03T13:11:32+01:00",
+    "scope": "4 paired B/C cases (word, meaning, category, unpublish), 1x baseline, batch 1",
+    "families_tested": [
+        "category",
+        "meaning",
+        "unpublish",
+        "word"
+    ],
+    "pairs": 4,
+    "identical_index_digests": true,
+    "committed_on_disposable_db_only": true,
+    "work_db_reported_disposed": true,
+    "original_source_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+    "original_runner_sha256": "3defe1d359cbd4ba8daea95c329e71748c8beb4609bab3c0fa75662d4521dd19",
+    "source_source_and_reference_unchanged_according_to_original_runner": true,
+    "raw_report_file": "STAGE22B_RAW_B1_4PAIRS_20261103_131132_be8dfd.json",
+    "raw_report_sha256": "0fcf5e07e933145dbdb5faf334ebf1e0d61b28cee5dde2999493b746eb66f059",
+    "not_yet_tested": [
+        "publish-pending fresh mutation",
+        "explicit ROLLBACK parity",
+        "concurrent writer schedules"
+    ],
+    "scientific_boundary": "Preliminary Stage22B correctness pilot; do not call this a 5-family or rollback-proof validation."
+}

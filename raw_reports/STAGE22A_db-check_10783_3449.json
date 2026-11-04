@@ -1,0 +1,72 @@
+{
+    "tool": "RESTI Stage 1 Preflight (no DDL/DML)",
+    "timestamp": "2026-11-03T12:55:32+01:00",
+    "checks": {
+        "source": {
+            "frozen_files": {
+                "services/SearchService.php": {
+                    "sha256": "bd92f47062730315e21939ca2f0eb3c94dd8e28b30a9db93e816d0f75f30e95f",
+                    "status": "PASS"
+                },
+                "services/IndexStage2Materializer.php": {
+                    "sha256": "4bfbeb5bb14b97330000bee12cacc9517cf585f7c1c816bde8bb50392c489caa",
+                    "status": "PASS"
+                },
+                "services/IndexStage3IncrementalMaintainer.php": {
+                    "sha256": "b2c00ba1e8f34d4ad0b14311702d05b83ff6c92678254a36beef49447269a02f",
+                    "status": "PASS"
+                },
+                "models/Dictionary.php": {
+                    "sha256": "016fc74ce2f560757302a757b5041d4ee3c773f3fe7c59fa3d95d070aba64c98",
+                    "status": "PASS"
+                }
+            },
+            "historical_abc_runner_sha256": "3defe1d359cbd4ba8daea95c329e71748c8beb4609bab3c0fa75662d4521dd19",
+            "historical_abc_runner_present": true
+        },
+        "historical_evidence": {
+            "batches": {
+                "1": {
+                    "pairs": 10,
+                    "all_pairs_parity_pass": true,
+                    "evidence_sha256": "e612a8597f9e553b27f252e89a5bda1796d53b72d0140eae8597425e2832d017"
+                },
+                "10": {
+                    "pairs": 8,
+                    "all_pairs_parity_pass": true,
+                    "evidence_sha256": "e2bb15c0755536c22e345a9f9e20cb101bd792736202ef34d297fbf6c637e101"
+                },
+                "100": {
+                    "pairs": 8,
+                    "all_pairs_parity_pass": true,
+                    "evidence_sha256": "91448587a5b28a7db41b1be59f3065cd21305811bcd0f549a29d89d80db828a7"
+                }
+            },
+            "total_pairs": 26,
+            "historical_status": "REPORTED_PASS_NOT_RERUN"
+        },
+        "live_readonly_database_queries": {
+            "source_database": "kamus_tolour_index_v2",
+            "sandbox_database": "kamus_tolour_index_stage21_s1_sandbox",
+            "counts_source": {
+                "dictionary": 5687,
+                "approved": 4587,
+                "entries": 4587,
+                "terms": 29546
+            },
+            "counts_sandbox": {
+                "dictionary": 5687,
+                "approved": 4587,
+                "entries": 4587,
+                "terms": 29546
+            },
+            "source_core_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+            "index_metadata_valid": true,
+            "tables_innodb": true,
+            "dictionary_triggers": 0,
+            "old_abc_work_database_exists": false
+        }
+    },
+    "mode": "db-check",
+    "status": "PASS"
+}

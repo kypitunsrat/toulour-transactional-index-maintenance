@@ -1,0 +1,572 @@
+{
+    "stage": "22E",
+    "protocol": "STAGE22E_FORENSIC_SQL_READONLY_2026_V1",
+    "run_id": "20261104_214831_05496b01",
+    "timestamp_wita": "2026-11-04T21:48:31+08:00",
+    "mode": "--offline",
+    "status": "PASS",
+    "safety": "No database mutations. Stage22C/D historical reports untouched. SQL connection only to source V2 and reference Stage21 S1.",
+    "source_modified": false,
+    "frozen_files": {
+        "tests/index_comparator_abc.php": "3defe1d359cbd4ba8daea95c329e71748c8beb4609bab3c0fa75662d4521dd19",
+        "services/SearchService.php": "bd92f47062730315e21939ca2f0eb3c94dd8e28b30a9db93e816d0f75f30e95f",
+        "services/IndexStage2Materializer.php": "4bfbeb5bb14b97330000bee12cacc9517cf585f7c1c816bde8bb50392c489caa",
+        "services/IndexStage3IncrementalMaintainer.php": "b2c00ba1e8f34d4ad0b14311702d05b83ff6c92678254a36beef49447269a02f",
+        "models/Dictionary.php": "016fc74ce2f560757302a757b5041d4ee3c773f3fe7c59fa3d95d070aba64c98"
+    },
+    "offline": {
+        "scope": "Six completed Stage22C/22D FINAL 30-pair JSONs, paired by fixture within each protocol. NO new SQL experiments.",
+        "warnings": [
+            "Phase timings are wall-clock per-operation time and may include server stalls; not causal profiling.",
+            "Physical lock waits not measured; counts of locking statements only.",
+            "Original B/C and controlled B2/C2 are separate protocols: do not pool latency.",
+            "All Stage22D controls intentionally add full-posting reads to B2; not production throughput.",
+            "One host, one 1x real corpus; no independent workload/hardware replication."
+        ],
+        "batches": {
+            "1": {
+                "pairs": 30,
+                "all_cross_protocol_digest_equal": true,
+                "controlled_query_counts_matched": true,
+                "winner_counts_22C": {
+                    "B": 11,
+                    "C": 19
+                },
+                "winner_counts_22D": {
+                    "B2": 14,
+                    "C2": 16,
+                    "ties": 0
+                },
+                "maintenance_stats": {
+                    "B": {
+                        "n": 30,
+                        "mean_ms": 53.7122,
+                        "median_ms": 39.5502,
+                        "p95_nearest_rank_ms": 157.4286,
+                        "min_ms": 23.0763,
+                        "max_ms": 161.1137,
+                        "sd_sample_ms": 37.072,
+                        "trimmed_mean_10pct_ms": 45.475
+                    },
+                    "C": {
+                        "n": 30,
+                        "mean_ms": 65.6458,
+                        "median_ms": 42.6444,
+                        "p95_nearest_rank_ms": 267.3518,
+                        "min_ms": 2.0203,
+                        "max_ms": 336.754,
+                        "sd_sample_ms": 80.2835,
+                        "trimmed_mean_10pct_ms": 47.4891
+                    },
+                    "B2": {
+                        "n": 30,
+                        "mean_ms": 65.7982,
+                        "median_ms": 41.9885,
+                        "p95_nearest_rank_ms": 239.3177,
+                        "min_ms": 15.0872,
+                        "max_ms": 285.1137,
+                        "sd_sample_ms": 66.6524,
+                        "trimmed_mean_10pct_ms": 49.8978
+                    },
+                    "C2": {
+                        "n": 30,
+                        "mean_ms": 66.5203,
+                        "median_ms": 42.6399,
+                        "p95_nearest_rank_ms": 296.3852,
+                        "min_ms": 1.7356,
+                        "max_ms": 388.1668,
+                        "sd_sample_ms": 91.1679,
+                        "trimmed_mean_10pct_ms": 45.1625
+                    },
+                    "paired_B2_minus_C2": {
+                        "n": 30,
+                        "mean_ms": -0.7221,
+                        "median_ms": 8.2004,
+                        "p95_nearest_rank_ms": 198.3183,
+                        "min_ms": -361.9625,
+                        "max_ms": 249.6724,
+                        "sd_sample_ms": 117.9651,
+                        "trimmed_mean_10pct_ms": 7.7722
+                    }
+                },
+                "posting_writes": {
+                    "B": 372,
+                    "C": 84,
+                    "B2": 372,
+                    "C2": 84
+                },
+                "posting_reduction_C2_pct": 77.4194,
+                "control_counts": {
+                    "metadata_lock_B2": 30,
+                    "metadata_lock_C2": 30,
+                    "entry_lock_B2": 30,
+                    "entry_lock_C2": 30,
+                    "posting_lock_B2": 30,
+                    "posting_lock_C2": 30,
+                    "metadata_update_B2": 15,
+                    "metadata_update_C2": 15
+                },
+                "phase_sums_ms": {
+                    "meta_lock_ms": {
+                        "B2": 13.607,
+                        "C2": 14.8
+                    },
+                    "entry_postings_read_lock_ms": {
+                        "B2": 15.436,
+                        "C2": 16.943
+                    },
+                    "project_and_diff_ms": {
+                        "B2": 1.822,
+                        "C2": 2.124
+                    },
+                    "entry_write_ms": {
+                        "B2": 639.005,
+                        "C2": 558.465
+                    },
+                    "postings_write_ms": {
+                        "B2": 1246.386,
+                        "C2": 1339.622
+                    },
+                    "meta_update_ms": {
+                        "B2": 8.773,
+                        "C2": 8.721
+                    }
+                },
+                "phase_median_ms": {
+                    "meta_lock_ms": {
+                        "B2": 0.4072,
+                        "C2": 0.4221
+                    },
+                    "entry_postings_read_lock_ms": {
+                        "B2": 0.4645,
+                        "C2": 0.4645
+                    },
+                    "project_and_diff_ms": {
+                        "B2": 0.0541,
+                        "C2": 0.0572
+                    },
+                    "entry_write_ms": {
+                        "B2": 0.2312,
+                        "C2": 0.2295
+                    },
+                    "postings_write_ms": {
+                        "B2": 32.8139,
+                        "C2": 33.3368
+                    },
+                    "meta_update_ms": {
+                        "B2": 0.1645,
+                        "C2": 0.1612
+                    }
+                },
+                "phase_p95_ms": {
+                    "meta_lock_ms": {
+                        "B2": 0.8807,
+                        "C2": 1.0517
+                    },
+                    "entry_postings_read_lock_ms": {
+                        "B2": 0.8305,
+                        "C2": 1.4003
+                    },
+                    "project_and_diff_ms": {
+                        "B2": 0.171,
+                        "C2": 0.2286
+                    },
+                    "entry_write_ms": {
+                        "B2": 185.333,
+                        "C2": 36.5851
+                    },
+                    "postings_write_ms": {
+                        "B2": 172.6668,
+                        "C2": 216.7452
+                    },
+                    "meta_update_ms": {
+                        "B2": 1.0922,
+                        "C2": 1.1003
+                    }
+                }
+            },
+            "10": {
+                "pairs": 30,
+                "all_cross_protocol_digest_equal": true,
+                "controlled_query_counts_matched": true,
+                "winner_counts_22C": {
+                    "B": 19,
+                    "C": 11
+                },
+                "winner_counts_22D": {
+                    "B2": 20,
+                    "C2": 10,
+                    "ties": 0
+                },
+                "maintenance_stats": {
+                    "B": {
+                        "n": 30,
+                        "mean_ms": 325.8186,
+                        "median_ms": 141.256,
+                        "p95_nearest_rank_ms": 995.4367,
+                        "min_ms": 33.6316,
+                        "max_ms": 1328.856,
+                        "sd_sample_ms": 355.8581,
+                        "trimmed_mean_10pct_ms": 265.2669
+                    },
+                    "C": {
+                        "n": 30,
+                        "mean_ms": 392.434,
+                        "median_ms": 270.9134,
+                        "p95_nearest_rank_ms": 1181.985,
+                        "min_ms": 76.4749,
+                        "max_ms": 1189.329,
+                        "sd_sample_ms": 327.3323,
+                        "trimmed_mean_10pct_ms": 339.3866
+                    },
+                    "B2": {
+                        "n": 30,
+                        "mean_ms": 316.6017,
+                        "median_ms": 115.1331,
+                        "p95_nearest_rank_ms": 1208.1025,
+                        "min_ms": 47.4818,
+                        "max_ms": 1216.653,
+                        "sd_sample_ms": 377.4292,
+                        "trimmed_mean_10pct_ms": 241.6639
+                    },
+                    "C2": {
+                        "n": 30,
+                        "mean_ms": 551.0234,
+                        "median_ms": 227.7848,
+                        "p95_nearest_rank_ms": 1768.8242,
+                        "min_ms": 51.2595,
+                        "max_ms": 3237.9443,
+                        "sd_sample_ms": 698.807,
+                        "trimmed_mean_10pct_ms": 406.4323
+                    },
+                    "paired_B2_minus_C2": {
+                        "n": 30,
+                        "mean_ms": -234.4217,
+                        "median_ms": -122.9608,
+                        "p95_nearest_rank_ms": 1099.3964,
+                        "min_ms": -2144.1016,
+                        "max_ms": 1101.645,
+                        "sd_sample_ms": 756.2428,
+                        "trimmed_mean_10pct_ms": -214.356
+                    }
+                },
+                "posting_writes": {
+                    "B": 3422,
+                    "C": 848,
+                    "B2": 3422,
+                    "C2": 848
+                },
+                "posting_reduction_C2_pct": 75.2192,
+                "control_counts": {
+                    "metadata_lock_B2": 30,
+                    "metadata_lock_C2": 30,
+                    "entry_lock_B2": 300,
+                    "entry_lock_C2": 300,
+                    "posting_lock_B2": 300,
+                    "posting_lock_C2": 300,
+                    "metadata_update_B2": 30,
+                    "metadata_update_C2": 30
+                },
+                "phase_sums_ms": {
+                    "meta_lock_ms": {
+                        "B2": 218.309,
+                        "C2": 14.33
+                    },
+                    "entry_postings_read_lock_ms": {
+                        "B2": 1396.855,
+                        "C2": 3129.361
+                    },
+                    "project_and_diff_ms": {
+                        "B2": 21.622,
+                        "C2": 25.081
+                    },
+                    "entry_write_ms": {
+                        "B2": 2162.501,
+                        "C2": 5235.102
+                    },
+                    "postings_write_ms": {
+                        "B2": 5236.254,
+                        "C2": 8007.275
+                    },
+                    "meta_update_ms": {
+                        "B2": 87.114,
+                        "C2": 64.075
+                    }
+                },
+                "phase_median_ms": {
+                    "meta_lock_ms": {
+                        "B2": 0.4252,
+                        "C2": 0.3733
+                    },
+                    "entry_postings_read_lock_ms": {
+                        "B2": 8.1635,
+                        "C2": 10.1139
+                    },
+                    "project_and_diff_ms": {
+                        "B2": 0.7409,
+                        "C2": 0.8365
+                    },
+                    "entry_write_ms": {
+                        "B2": 16.5966,
+                        "C2": 45.635
+                    },
+                    "postings_write_ms": {
+                        "B2": 75.3567,
+                        "C2": 120.8068
+                    },
+                    "meta_update_ms": {
+                        "B2": 0.4348,
+                        "C2": 0.6136
+                    }
+                },
+                "phase_p95_ms": {
+                    "meta_lock_ms": {
+                        "B2": 33.2608,
+                        "C2": 1.0709
+                    },
+                    "entry_postings_read_lock_ms": {
+                        "B2": 205.5236,
+                        "C2": 385.9668
+                    },
+                    "project_and_diff_ms": {
+                        "B2": 1.2651,
+                        "C2": 1.2691
+                    },
+                    "entry_write_ms": {
+                        "B2": 295.9791,
+                        "C2": 883.7392
+                    },
+                    "postings_write_ms": {
+                        "B2": 677.313,
+                        "C2": 1386.9355
+                    },
+                    "meta_update_ms": {
+                        "B2": 18.9994,
+                        "C2": 16.307
+                    }
+                }
+            },
+            "100": {
+                "pairs": 30,
+                "all_cross_protocol_digest_equal": true,
+                "controlled_query_counts_matched": true,
+                "winner_counts_22C": {
+                    "B": 21,
+                    "C": 9
+                },
+                "winner_counts_22D": {
+                    "B2": 19,
+                    "C2": 11,
+                    "ties": 0
+                },
+                "maintenance_stats": {
+                    "B": {
+                        "n": 30,
+                        "mean_ms": 1408.3475,
+                        "median_ms": 359.3708,
+                        "p95_nearest_rank_ms": 3573.6502,
+                        "min_ms": 228.2039,
+                        "max_ms": 4321.0899,
+                        "sd_sample_ms": 1344.366,
+                        "trimmed_mean_10pct_ms": 1257.5052
+                    },
+                    "C": {
+                        "n": 30,
+                        "mean_ms": 2985.4426,
+                        "median_ms": 2780.5347,
+                        "p95_nearest_rank_ms": 5765.3538,
+                        "min_ms": 431.7879,
+                        "max_ms": 6927.213,
+                        "sd_sample_ms": 1611.3977,
+                        "trimmed_mean_10pct_ms": 2917.5854
+                    },
+                    "B2": {
+                        "n": 30,
+                        "mean_ms": 2105.9277,
+                        "median_ms": 1846.8562,
+                        "p95_nearest_rank_ms": 6571.9184,
+                        "min_ms": 213.5855,
+                        "max_ms": 7297.791,
+                        "sd_sample_ms": 1820.9974,
+                        "trimmed_mean_10pct_ms": 1816.2145
+                    },
+                    "C2": {
+                        "n": 30,
+                        "mean_ms": 2168.8642,
+                        "median_ms": 2243.4033,
+                        "p95_nearest_rank_ms": 4949.8162,
+                        "min_ms": 269.2754,
+                        "max_ms": 5167.4293,
+                        "sd_sample_ms": 1622.8302,
+                        "trimmed_mean_10pct_ms": 2079.0356
+                    },
+                    "paired_B2_minus_C2": {
+                        "n": 30,
+                        "mean_ms": -62.9366,
+                        "median_ms": -225.8159,
+                        "p95_nearest_rank_ms": 4890.958,
+                        "min_ms": -4523.189,
+                        "max_ms": 6933.8217,
+                        "sd_sample_ms": 2692.1057,
+                        "trimmed_mean_10pct_ms": -223.4342
+                    }
+                },
+                "posting_writes": {
+                    "B": 34588,
+                    "C": 8628,
+                    "B2": 34588,
+                    "C2": 8628
+                },
+                "posting_reduction_C2_pct": 75.0549,
+                "control_counts": {
+                    "metadata_lock_B2": 30,
+                    "metadata_lock_C2": 30,
+                    "entry_lock_B2": 3000,
+                    "entry_lock_C2": 3000,
+                    "posting_lock_B2": 3000,
+                    "posting_lock_C2": 3000,
+                    "metadata_update_B2": 30,
+                    "metadata_update_C2": 30
+                },
+                "phase_sums_ms": {
+                    "meta_lock_ms": {
+                        "B2": 62.699,
+                        "C2": 53.79
+                    },
+                    "entry_postings_read_lock_ms": {
+                        "B2": 23893.705,
+                        "C2": 30118.91
+                    },
+                    "project_and_diff_ms": {
+                        "B2": 169.957,
+                        "C2": 222.073
+                    },
+                    "entry_write_ms": {
+                        "B2": 8032.203,
+                        "C2": 12270.78
+                    },
+                    "postings_write_ms": {
+                        "B2": 30300.079,
+                        "C2": 22118.252
+                    },
+                    "meta_update_ms": {
+                        "B2": 660.454,
+                        "C2": 222.431
+                    }
+                },
+                "phase_median_ms": {
+                    "meta_lock_ms": {
+                        "B2": 0.2334,
+                        "C2": 0.228
+                    },
+                    "entry_postings_read_lock_ms": {
+                        "B2": 557.2515,
+                        "C2": 1051.0873
+                    },
+                    "project_and_diff_ms": {
+                        "B2": 5.8976,
+                        "C2": 7.7864
+                    },
+                    "entry_write_ms": {
+                        "B2": 84.9391,
+                        "C2": 270.337
+                    },
+                    "postings_write_ms": {
+                        "B2": 693.7787,
+                        "C2": 553.5418
+                    },
+                    "meta_update_ms": {
+                        "B2": 0.4637,
+                        "C2": 0.4937
+                    }
+                },
+                "phase_p95_ms": {
+                    "meta_lock_ms": {
+                        "B2": 13.8596,
+                        "C2": 14.7381
+                    },
+                    "entry_postings_read_lock_ms": {
+                        "B2": 2210.7753,
+                        "C2": 2245.741
+                    },
+                    "project_and_diff_ms": {
+                        "B2": 9.3391,
+                        "C2": 10.9808
+                    },
+                    "entry_write_ms": {
+                        "B2": 982.1646,
+                        "C2": 1294.0104
+                    },
+                    "postings_write_ms": {
+                        "B2": 4184.9401,
+                        "C2": 1923.044
+                    },
+                    "meta_update_ms": {
+                        "B2": 218.1634,
+                        "C2": 24.827
+                    }
+                }
+            }
+        },
+        "inputs": [
+            {
+                "stage": "22C",
+                "batch": 1,
+                "file": "STAGE22C_B1_30PAIRS_20261103_210914_6cdcad84.json",
+                "sha256": "119b50fe4007968f3d15d4247af2f33eb04e53000e0b5679c1318332795b7ec7",
+                "other_candidates": [
+                    "STAGE22C_B1_30PAIRS_20261103_210914_6cdcad84.json"
+                ]
+            },
+            {
+                "stage": "22D",
+                "batch": 1,
+                "file": "STAGE22D_B1_30PAIRS_20261104_014208_bc5c78f5.json",
+                "sha256": "63b2bfe184deed817d11abf65e425d3234d7b347556391224b60bfa722b53cc4",
+                "other_candidates": [
+                    "STAGE22D_B1_30PAIRS_20261104_014208_bc5c78f5.json"
+                ]
+            },
+            {
+                "stage": "22C",
+                "batch": 10,
+                "file": "STAGE22C_B10_30PAIRS_20261103_222145_deeb9a84.json",
+                "sha256": "89002f44cdf4e5bde25870a14eba71b6a05b08721055849d1bc438a715e67ae4",
+                "other_candidates": [
+                    "STAGE22C_B10_30PAIRS_20261103_222145_deeb9a84.json"
+                ]
+            },
+            {
+                "stage": "22D",
+                "batch": 10,
+                "file": "STAGE22D_B10_30PAIRS_20261104_160504_73d3fa83.json",
+                "sha256": "7cea58a9e0e009b72e2a6fdf0e63ca8231567e66985706264d14ecf3e1e96131",
+                "other_candidates": [
+                    "STAGE22D_B10_30PAIRS_20261104_134052_7b0c24ac.json",
+                    "STAGE22D_B10_30PAIRS_20261104_160212_7ebf5993.json",
+                    "STAGE22D_B10_30PAIRS_20261104_160504_73d3fa83.json"
+                ]
+            },
+            {
+                "stage": "22C",
+                "batch": 100,
+                "file": "STAGE22C_B100_30PAIRS_20261103_232416_7f33df38.json",
+                "sha256": "464650e252facc025a58b50b2f6cb6bf998e4e266a867e4a6be6f0ea0bcf5c85",
+                "other_candidates": [
+                    "STAGE22C_B100_30PAIRS_20261103_232416_7f33df38.json"
+                ]
+            },
+            {
+                "stage": "22D",
+                "batch": 100,
+                "file": "STAGE22D_B100_30PAIRS_20261104_183404_235b348b.json",
+                "sha256": "3a55b43f74ebfd29f394b69a7165d07fb86f4705838dea908da8bd841ea4a362",
+                "other_candidates": [
+                    "STAGE22D_B100_30PAIRS_20261104_183404_235b348b.json"
+                ]
+            }
+        ],
+        "paired_csv": "STAGE22E_PAIRED_PHASES_20261104_214831_05496b01.csv",
+        "interpretation_file": "STAGE22E_INTERPRETASI_20261104_214831_05496b01.md"
+    }
+}
