@@ -20,6 +20,12 @@ The frozen experimental corpus has 4,587 approved records and 29,546 index posti
 
 The initial release emphasized Stage22B–E because these reports were supplied and audited after an earlier manuscript draft. The current release also includes **Stage22A baseline records, Stage22B summary, historical 26-pair B/C comparator evidence and the available runner snapshots**. It does **not** claim complete Stage15–21 replay; those original logs are missing from this selected public release. See [`STAGE_EVIDENCE_COVERAGE.md`](STAGE_EVIDENCE_COVERAGE.md) for a stage-by-stage evidence matrix and rights constraints.
 
+## Standalone safe synthetic method replay (Stage 4 addendum)
+
+**New:** [`synthetic_replay/`](synthetic_replay/) offers a Python 3 standard-library SQLite `:memory:` example of W/M/T **selective refresh versus differential posting maintenance** with deterministic invented data. On Windows run `JALANKAN_REPLAY_SINTETIS.bat` (supports `py -3`); on Linux/macOS run `python synthetic_replay/run_replay.py`. It tests 18 method pairs across batch sizes 1/10/100 and six mutation types, checks full-projection parity, two rollback tests, and deliberate corruption detection. Reports are written to a fresh system TEMP folder, not the repository or XAMPP.
+
+This is **a new simplified synthetic logical replay**, *not* a reproduction of historical Stage22C/D real-corpus MariaDB latency, MySQL locking or all PHP normalization behavior. Existing Stage22 180-pair results and SHA inventory are preserved and separately audited. See [`synthetic_replay/README.md`](synthetic_replay/README.md) and [`STAGE4_CHANGELOG.md`](STAGE4_CHANGELOG.md). Optional GitHub Actions workflow under `.github/workflows/synthetic-replay.yml` executes on Ubuntu and Windows without a database server.
+
 ## Fast verification
 
 From the repository root (Python 3, standard library only):

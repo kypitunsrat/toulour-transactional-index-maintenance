@@ -30,9 +30,13 @@ Three snapshotted runners and BAT menus are located in `experimental_runner_snap
 
 Those scripts require the exact originally frozen source version, historical ABC runner, and the baseline project directory `kamus_tolour_index_v1`. Hash guards refuse altered inputs. This archive intentionally excludes those dependencies and source-derived database records. Consequently, **Tier B is code inspectability, not a runnable clean-room reproduction**.
 
-## Tier C — Independent local replay (NOT provided)
+## Tier C — Synthetic local logical replay (provided in Stage 4)
 
-Would require all of the following, which are intentionally absent:
+The new `synthetic_replay/` folder is **independently runnable** from a Python 3 standard-library installation. It starts from 280 invented rows (160 approved, 120 pending) in SQLite `:memory:`, runs deterministic batch mutations for both policies, compares 18 resulting index pairs to from-source materialization and each other, and checks transaction rollback. The Windows `JALANKAN_REPLAY_SINTETIS.bat` uses `py -3` where necessary. No project code/database is modified. This is a **limited model**, not a validated MariaDB/PHP reproduction; the word/meaning normalization on arbitrary Unicode, `FOR UPDATE`, concurrent conflicts and real-corpus timing remain untested.
+
+## Tier D — Exact historical PHP/MariaDB reproduction (NOT provided)
+
+An exact historical replay would require the following, which are intentionally absent from the public release:
 
 1. Explicitly licensed sanitized project source (`IndexStage3IncrementalMaintainer`, materializer, dictionary model and historical comparator), with no secrets or sensitive routes.
 2. Releasable schema + **independently designed non-copyrighted synthetic fixture data** (or permission-cleared real corpus); a synthetic corpus can demonstrate correct function but **does not independently reproduce the real-corpus timing numbers**.

@@ -1,8 +1,13 @@
 {
-  "format": "SHA256_PUBLIC_FILES_V4_STAGE3",
-  "source_archive": "toulour-transactional-index-maintenance-main (1).zip",
-  "notice": "6 November 2026 journal-neutral documentation addendum. Archive byte identity for historical raw reports, scripts and comparator maintained. New provenance and CC attribution docs added. Inventory excludes itself.",
+  "format": "SHA256_PUBLIC_FILES_V5_STAGE4",
+  "source_archive": "Stage3 verified public research repo as of 2026-11-06",
+  "notice": "Stage4 synthetic logical replay addendum. Historical 70 files not named README or REPLAY_REQUIREMENTS remain byte-identical with Stage3 baseline; inventory excluded from itself. Stage4 example reports do not represent historical Stage22 results.",
   "files": [
+    {
+      "path": ".github/workflows/synthetic-replay.yml",
+      "sha256": "9bef042fb8d7c2ea78e910027e48860c83367be3549d08b9a4fcb582b09f3147",
+      "bytes": 956
+    },
     {
       "path": ".gitignore",
       "sha256": "8294b96a8ae845091c758b2069902728c8db06c209e79391d7eb99b95c8f0348",
@@ -39,6 +44,11 @@
       "bytes": 1994
     },
     {
+      "path": "JALANKAN_REPLAY_SINTETIS.bat",
+      "sha256": "fb3f3a82f87a5b5845adb7443cbb52d6a5ea7456dbc9dffa40aae398af487faf",
+      "bytes": 1075
+    },
+    {
       "path": "PROVENANCE_AND_RIGHTS.md",
       "sha256": "3ca45a8b6e36626bf95c2651ec79981bfcc51135b6e9a5d436655d5c59eae3fe",
       "bytes": 3980
@@ -50,13 +60,13 @@
     },
     {
       "path": "README.md",
-      "sha256": "24da60237c158b5827150dc79daac851a40300b0baa69e83dbcd3246cc08e0e8",
-      "bytes": 8280
+      "sha256": "269b68c8f74120aee8ab1d779c1dab3f22cbabd95a283bc537ce9dc532c1c4d4",
+      "bytes": 9452
     },
     {
       "path": "REPLAY_REQUIREMENTS.md",
-      "sha256": "d7d5650b861191b3de52f04ef5c5b4d35087ac96677d486628253ca88f837310",
-      "bytes": 3471
+      "sha256": "618971acd9a316c75a721264950f7bc49d79d6e4d175a444c9d2ca3cb71859c0",
+      "bytes": 4274
     },
     {
       "path": "STAGE22_BASELINE_LOCK_MANIFEST.json",
@@ -67,6 +77,16 @@
       "path": "STAGE3_CHANGELOG.md",
       "sha256": "b5a114a4b7caba64b62cf7a7cb012266944a42fdddadebc78e57c94e202b417f",
       "bytes": 1928
+    },
+    {
+      "path": "STAGE4_CHANGELOG.md",
+      "sha256": "b1c24f57ee242496081de13c3c09f21ecd8e13184c28156cf1628d1d877bce5d",
+      "bytes": 1226
+    },
+    {
+      "path": "STAGE4_VERIFICATION_REPORT.md",
+      "sha256": "2304257af6fdcdff6b8e326c41dbc06784bbfaab14feb0d48fb13437db73bc95",
+      "bytes": 1725
     },
     {
       "path": "STAGE_EVIDENCE_COVERAGE.md",
@@ -352,6 +372,41 @@
       "path": "raw_reports/STAGE22E_SQL_READONLY_20261104_214857_9acd166d.json",
       "sha256": "d107dd2f175047d80c3d959c8bbfe0cdce48bd376071c0bb87992b23b95e30a2",
       "bytes": 12179
+    },
+    {
+      "path": "synthetic_replay/README.md",
+      "sha256": "1231e9ca354aeb31a345fa51b0b1032ad67084706c9a0f0eeae1a331efdffc7f",
+      "bytes": 4644
+    },
+    {
+      "path": "synthetic_replay/SOURCE_MAPPING.md",
+      "sha256": "6b50d40c0c1855cbed497afdc519d54421d681b5f6fbd025eef396e0e8d74424",
+      "bytes": 2205
+    },
+    {
+      "path": "synthetic_replay/example_results/summary.json",
+      "sha256": "dc9b7e314e353c5bfa73271138e773d03f391b5818b51fa877c995dc9b7116a5",
+      "bytes": 12858
+    },
+    {
+      "path": "synthetic_replay/example_results/synthetic_pairs.csv",
+      "sha256": "376dab052447fc657d5931b5796a6588fdcd42235b763067aed7d71a187c629a",
+      "bytes": 5555
+    },
+    {
+      "path": "synthetic_replay/run_replay.py",
+      "sha256": "dcbd6e26d9e2141484df9b4077dc031785514da2c1102c14ec06134188dd70da",
+      "bytes": 17569
+    },
+    {
+      "path": "synthetic_replay/schema_mariadb_REFERENCE_ONLY.sql",
+      "sha256": "36ad81ddbbaae7eaeb8fb1d66b26f444d5dece04c81aebaddcc940b1ad33ae96",
+      "bytes": 1574
+    },
+    {
+      "path": "synthetic_replay/schema_sqlite.sql",
+      "sha256": "a9a1f699dda6ea1a91a685f612361400831a9208e6794635a5f2f48f6b617bd1",
+      "bytes": 1426
     },
     {
       "path": "tools/verify_stage22_baseline_reports.py",
