@@ -1,0 +1,32 @@
+name: Synthetic WMT maintenance parity (safe)
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'synthetic_replay/**'
+      - 'JALANKAN_REPLAY_SINTETIS.bat'
+      - '.github/workflows/synthetic-replay.yml'
+      - 'SHA256_PUBLIC_FILES.json'
+      - 'README.md'
+      - 'REPLAY_REQUIREMENTS.md'
+jobs:
+  synthetic-replay:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify inventory and historical saved results
+        run: |
+          python verify_public_package.py
+          python TOULOUR_INDEX_S3_VERIFY_SAVED_RESULTS.py
+          python tools/verify_stage22_baseline_reports.py
+      - name: Run isolated synthetic replay (no MariaDB)
+        run: python synthetic_replay/run_replay.py
