@@ -1,0 +1,80 @@
+{
+  "manifest_version": "STAGE22_LOGICAL_BASELINE_PUBLIC_V1",
+  "audit_date": "2026-11-06",
+  "scope": "Archived cross-study logical baseline and six report cross-check; no source data or SQL dump included",
+  "source_total": 5687,
+  "approved_count": 4587,
+  "nonapproved_count": 1100,
+  "materialized_index_entries": 4587,
+  "materialized_postings": 29546,
+  "cross_study_canonical_six_fields": [
+    "id",
+    "category_id",
+    "tolour_word",
+    "indonesian_meaning",
+    "popularity",
+    "search_count"
+  ],
+  "approved_canonical_sha256": "09fb2a7b9b3b504675654f953380206f576dbb8bb3e6df01c024830162d71f49",
+  "source_core_original_runner_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+  "wmt_index_original_runner_sha256": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0",
+  "report_files": [
+    {
+      "report": "STAGE22C_B100_30PAIRS_20261103_232416_7f33df38.json",
+      "stage": "22C",
+      "batch": 100,
+      "paired_comparisons": 30,
+      "source_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+      "initial_index_digest_sha256": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0"
+    },
+    {
+      "report": "STAGE22C_B10_30PAIRS_20261103_222145_deeb9a84.json",
+      "stage": "22C",
+      "batch": 10,
+      "paired_comparisons": 30,
+      "source_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+      "initial_index_digest_sha256": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0"
+    },
+    {
+      "report": "STAGE22C_B1_30PAIRS_20261103_210914_6cdcad84.json",
+      "stage": "22C",
+      "batch": 1,
+      "paired_comparisons": 30,
+      "source_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+      "initial_index_digest_sha256": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0"
+    },
+    {
+      "report": "STAGE22D_B100_30PAIRS_20261104_183404_235b348b.json",
+      "stage": "22D",
+      "batch": 100,
+      "paired_comparisons": 30,
+      "source_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+      "initial_index_digest_sha256": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0"
+    },
+    {
+      "report": "STAGE22D_B10_30PAIRS_20261104_160504_73d3fa83.json",
+      "stage": "22D",
+      "batch": 10,
+      "paired_comparisons": 30,
+      "source_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+      "initial_index_digest_sha256": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0"
+    },
+    {
+      "report": "STAGE22D_B1_30PAIRS_20261104_014208_bc5c78f5.json",
+      "stage": "22D",
+      "batch": 1,
+      "paired_comparisons": 30,
+      "source_sha256": "8676384ea28e4cc98fa8e5e50c8f221cb5a2746e91259a28f8b7ebe3085c39d4",
+      "initial_index_digest_sha256": "dbbd4272c1c135f263746a706b412b1b55a06f1f9db2aaf35761027aa13425f0"
+    }
+  ],
+  "verified_private_archived_sql_baselines": 2,
+  "archived_per_run_mysqldump_files_available": false,
+  "full_db_replay_claimed": false,
+  "source_notice": "Source-derived lexical materials: published repository CC BY-NC 4.0 basis plus original All Rights Reserved / book notice; see PROVENANCE_AND_RIGHTS.md",
+  "study_boundary": "VOICE lexical retrieval != indexing maintenance; 22C and 22D distinct protocols",
+  "source_archives_sha256": {
+    "voice_zip": "b19612a35b4b17bb463e50291a34a37daf1a4ef92e630da4dd06c369a4eda4f7",
+    "indexing_pre_stage3_zip": "db5e1ad08bcffee599a161351ee6ff85dc8a9e0234eedaabbb6abc6a5871d124"
+  }
+}

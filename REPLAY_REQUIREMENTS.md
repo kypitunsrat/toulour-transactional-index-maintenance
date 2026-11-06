@@ -12,6 +12,18 @@ python verify_public_package.py
 
 A PASS recomputes *saved* numerical claims but is not a new independent ground-truth proof.
 
+## Cross-study data inputs and baseline evidence
+
+The approved-only lexical subset is available in the separate VOICE research archive, subject to the source and rights notices described in `DATA_AVAILABILITY.md`. **Those approved 4,587 records do not reconstruct the complete 5,687-record original database and W/M/T state.** For exact historical baseline lineage see `CROSS_STUDY_DATASET_PROVENANCE.md` and `STAGE22_BASELINE_LOCK_MANIFEST.json`.
+
+Public read-only metadata verification (checks six Stage22C/D raw report headers, counts and digests; does not need source data):
+
+```cmd
+python tools/verify_stage22_baseline_reports.py
+```
+
+The public check compares reports to a previously verified logical manifest; it is not a new private-SQL hash calculation and cannot verify absent transient mysqldumps.
+
 ## Tier B — Inspection of the historical experiment source
 
 Three snapshotted runners and BAT menus are located in `experimental_runner_snapshots/22C`, `/22D`, and `/22E`. The PHP computation files preserve historical bytes. The published BAT/README operator guidance was normalized without changing its command logic; see PUBLICATION_NOTES.md. The code retains local XAMPP paths, root user assumptions, and destructive disposable work DB restoration/drop logic. **Do not run them from this repository or on production systems**.

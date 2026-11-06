@@ -33,3 +33,7 @@ The historical BAT/README SHA-256 hashes below distinguish the study-working fil
 A successful Python report verification checks saved numerical results, **not** a standalone independent PHP/MariaDB replay.
 The snapshotted experiment runners require the original controlled project and approved source database, which are not in this archive. The original study must not be represented as independently replayed from this package.
 The code files may contain destructive operations restricted to disposable databases. Do not execute on production systems.
+
+## 6 November 2026: cross-study Stage 3 documentation addendum
+
+A new documentation release aligns the indexing source attribution and data availability language with the already-distributed VOICE archive **without changing VOICE R01 itself**. It adds `DATA_AVAILABILITY.md`, `CROSS_STUDY_DATASET_PROVENANCE.md`, `STAGE22_BASELINE_LOCK_MANIFEST.json`, `tools/verify_stage22_baseline_reports.py`, and `STAGE3_CHANGELOG.md`; it updates public README, rights, replay instructions, and SHA-256 inventory. The journal-neutral display title is updated to the authors' preferred sentence-case form. **No raw JSON/CSV evidence, historical 26-pair reports, or experiment runner snapshot bytes are modified.** Rebuilding the inventory is an archive-integrity bookkeeping change, not a new benchmark.

@@ -1,7 +1,7 @@
 {
-  "format": "SHA256_PUBLIC_FILES_V3",
-  "source_archive": "TOULOUR_INDEX_GITHUB.zip",
-  "notice": "Journal-independent public distribution. Historical raw reports and runner snapshots retained byte-identical; top-level supplementary names and documentation updated. Changes are described in PUBLICATION_NOTES.md and ARCHIVE_SCOPE.md.",
+  "format": "SHA256_PUBLIC_FILES_V4_STAGE3",
+  "source_archive": "toulour-transactional-index-maintenance-main (1).zip",
+  "notice": "6 November 2026 journal-neutral documentation addendum. Archive byte identity for historical raw reports, scripts and comparator maintained. New provenance and CC attribution docs added. Inventory excludes itself.",
   "files": [
     {
       "path": ".gitignore",
@@ -19,29 +19,54 @@
       "bytes": 764
     },
     {
+      "path": "CROSS_STUDY_DATASET_PROVENANCE.md",
+      "sha256": "4c7a6b0c26d5373357fb0ac9e72123a1c9c0842e753509ee0800d6d6e213bf52",
+      "bytes": 4290
+    },
+    {
+      "path": "DATA_AVAILABILITY.md",
+      "sha256": "3b1248b006e56abc7c47345dcae9bc9fc7907d594cdde8430d8f7dbe627f8d43",
+      "bytes": 5112
+    },
+    {
       "path": "EXPERIMENT_CODE_NOTICE.md",
       "sha256": "2bf9a053ef600a9b1b9833b105d04a8f053a039f2bc606fe0db18e8bf78299e7",
       "bytes": 1240
     },
     {
+      "path": "JALANKAN_AUDIT_REPO.bat",
+      "sha256": "9f2768cdd49203702fe745f69e027cac843b87fca41b5ac0460c6566631a2f2d",
+      "bytes": 1994
+    },
+    {
       "path": "PROVENANCE_AND_RIGHTS.md",
-      "sha256": "2f3a8e0cf839f1e9ad8a9484f8d8fd742dd08e18993660a86c52c62d5df1aac8",
-      "bytes": 2858
+      "sha256": "3ca45a8b6e36626bf95c2651ec79981bfcc51135b6e9a5d436655d5c59eae3fe",
+      "bytes": 3980
     },
     {
       "path": "PUBLICATION_NOTES.md",
-      "sha256": "2ff8a74f75e3203d4cbe4bbb14564d6e4dbda191fa6555f516d29b1c21be9ff0",
-      "bytes": 4086
+      "sha256": "9e97ad4a1dea829e00fffaa00ce38df928ddb6ae36aed5cc7c588e10967fbbdc",
+      "bytes": 4877
     },
     {
       "path": "README.md",
-      "sha256": "a4af609e39d1d183a30d90a6140f5409c6317f3c0861c328a9861809c4988e79",
-      "bytes": 6532
+      "sha256": "24da60237c158b5827150dc79daac851a40300b0baa69e83dbcd3246cc08e0e8",
+      "bytes": 8280
     },
     {
       "path": "REPLAY_REQUIREMENTS.md",
-      "sha256": "a2053b920c31732e3899e5d747e133c459a66ab83a37c2decbd40f1ef95d597f",
-      "bytes": 2661
+      "sha256": "d7d5650b861191b3de52f04ef5c5b4d35087ac96677d486628253ca88f837310",
+      "bytes": 3471
+    },
+    {
+      "path": "STAGE22_BASELINE_LOCK_MANIFEST.json",
+      "sha256": "686399bf956d300768e65eaf6013aecebea13e8ea614537dd272320d720e1c61",
+      "bytes": 3592
+    },
+    {
+      "path": "STAGE3_CHANGELOG.md",
+      "sha256": "b5a114a4b7caba64b62cf7a7cb012266944a42fdddadebc78e57c94e202b417f",
+      "bytes": 1928
     },
     {
       "path": "STAGE_EVIDENCE_COVERAGE.md",
@@ -329,9 +354,14 @@
       "bytes": 12179
     },
     {
+      "path": "tools/verify_stage22_baseline_reports.py",
+      "sha256": "5b34806a9b611c3d362dc994c97b06054c341b6fde275d7147ed17f2a4569b38",
+      "bytes": 1889
+    },
+    {
       "path": "verify_public_package.py",
-      "sha256": "0c015df411e572f7758ec203047af0d236a5cf7b07ba55a1ffaf099f2d38fe5e",
-      "bytes": 583
+      "sha256": "cd886cf87484486c6665f66bf7ab7d9e92b62d12e10d4758c92ffa8c0a86c35e",
+      "bytes": 1126
     }
   ]
 }

@@ -1,29 +1,31 @@
-# Provenance, copyright, ethics and privacy
+# Provenance, copyright, ethics and privacy — indexing study
 
-## Literary lexicon
+## Original copyrighted lexical source and published license basis
 
-The underlying Toulour (also Tondano) lexical resource is based on *Kamus Tondano–Indonesia* (1985), publicly accessible at https://repositori.kemendikdasmen.go.id/23919/ . The ministry repository information states a broad CC BY-NC 4.0 notice, but the specific record is marked **Copyright All Rights Reserved** and the printed book includes a reproduction notice. We do not conclude that an independent researcher may freely republish a full derived 4,587-record export. Clarify the terms/permissions with the rightsholder before making lexical content public.
+The original Toulour/Tondano source is **Suratman, S. T., Wantalangi, A., Tendean, G. J., Wuntu, S., Kawengian, A., & Kaligis, E. (1985). *Kamus Tondano–Indonesia*. Pusat Pembinaan dan Pengembangan Bahasa, Departemen Pendidikan dan Kebudayaan.**
 
-A CC BY 4.0 license for a future journal article **would not automatically relicense** third-party dictionary content or private human research records.
+Original item: https://repositori.kemendikdasmen.go.id/23919/ . As in the VOICE repository's `SOURCE_ATTRIBUTION.md` and `DATA_AVAILABILITY.md`, the public **ministry repository information statement for CC BY-NC 4.0** is the specified basis for attribution and noncommercial distribution of source-derived lexical research material (https://repositori.kemendikdasmen.go.id/information.html ; license: https://creativecommons.org/licenses/by-nc/4.0/). The underlying book remains copyrighted; this does not assert it is public domain or released without conditions. The item bears **All Rights Reserved**, and the printed volume includes a separate reproduction notice. These conflicting-looking notices remain disclosed; any uncertainty or use beyond authorized rights should be cleared with the rightsholder. No project-specific written permission was obtained or is claimed.
 
-## Included in this package
+The VOICE study documents digitization, field structuring, category/ID retention, curation with language collaborators, and normalization/query transformations. In the indexing study, the same approved lexical data is used as a database **source workload** to maintain W/M/T postings under mutation, not as an independent new lexical edition. Attribution must accompany permitted downstream distribution; changes to source material must be identified, noncommercial conditions observed, and endorsement by the ministry or communities must not be implied. Academic intent does not override the licensing terms. Nothing here imposes additional limits on uses already granted by the applicable CC license.
 
-- Saved benchmarking JSON and phase CSV without word/gloss text, individual assessments or authentication credentials (reviewed for common sensitive field patterns before packaging).
-- Derived paired statistics and verification scripts.
-- Stage22C/D/E experiment-script *snapshots*, provided for method transparency. Some original snapshots assume an XAMPP **local root account with a blank password**; those assumptions were part of the historical local setup and must **not** be treated as safe general deployment or as permission to run them against another database.
+## Included in this indexing package
+
+- Saved benchmark JSON and CSV without exposed words/glosses, individual assessments or authentication credentials.
+- Historical inspectable experimental runner sources with explicit execution hazards.
+- Six-report Stage22 logical-baseline manifest, public report verifier, and cross-study data-provenance notes; **no copy of the 4,587-entry lexicon** (use the linked VOICE approved-data fixture as applicable).
 
 ## Deliberately excluded
 
-- Original 1985 PDF, extracted scans, dictionary SQL dumps, derived word/meaning exports, full application project ZIP, developer credentials and `.env` files.
-- Validator-specific judgments, assessment sheets, names, account IDs, audit trails and any private adjudication data.
-- Privately held reviewer archive (VOICE S1), and any unapproved figures or manuscripts.
+- Full 1985 book, scans, private SQL dumps (including 1,100 nonapproved rows), and complete private web-app project.
+- Contributor, user/account, validator-specific or adjudication records and any authentication values, secrets or `.env` files.
+- Private VOICE S1 reviewer materials or unpublished personal research files.
 
-## Research governance and relation to VOICE
+## Ethics and separate publications
 
-VOICE described a linguist and senior native-speaker collaboration based on oral agreement, with no formal ethics approval or institutional exemption determination claimed. Do not reinterpret that statement as an authorization to publicly release their individual records or as independent formal approval for this indexing repository. No recruited human participants or user study are claimed in the current indexing benchmark.
+The VOICE study records two language collaborators working under oral agreement and does not claim formal institutional ethics approval. This fact does not authorize publication of individual validation/rating responses. The indexing work is an empirical database/software experiment, not an independent recruited-participant study. Its publication should not imply the VOICE relevance findings were newly assessed here.
 
-The VOICE repository is a **separate study** on retrieval and relevant results; the present study examines transaction-bound index projection maintenance and write/latency trade-offs. Dataset/system overlap must be declared and the appropriate separate papers cited.
+## Code rights and operational safety
 
-## Copyright responsibility
+The original experiment scripts document historical behavior and may include privileged XAMPP localhost assumptions and database `DROP`/restore logic for disposable sandbox DBs. Never run them on a production system or remove guards to force execution. **The source-derived lexical-data terms are distinct from code rights.** No software open-source license or blanket right to redistribute private application code is granted in this repository. Check code ownership with the applicable rightsholders before licensing it.
 
-The corresponding author and institutional coauthors should review ownership of any released code and data before changing this archive into a broad open-source license or creating a permanent public release. Until that review, this document records scope without issuing new blanket reuse permissions.
+Related documents: [`DATA_AVAILABILITY.md`](DATA_AVAILABILITY.md), [`CROSS_STUDY_DATASET_PROVENANCE.md`](CROSS_STUDY_DATASET_PROVENANCE.md), [`REPLAY_REQUIREMENTS.md`](REPLAY_REQUIREMENTS.md).
